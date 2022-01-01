@@ -23,4 +23,7 @@ fp-info-cache
 
 # Exported BOM files
 *.xml
-*.csv
+#*.csv
+
+# Ignore backup directory
+hardware/main/sd-card-mux-backups/
