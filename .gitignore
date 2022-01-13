@@ -27,3 +27,4 @@ fp-info-cache
 
 # Ignore backup directory
 hardware/main/sd-card-mux-backups/
+hardware/microsd-breakout/microsd-breakout-backups

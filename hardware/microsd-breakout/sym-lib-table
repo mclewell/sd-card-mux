@@ -1,0 +1,3 @@
+(sym_lib_table
+  (lib (name "sd-card-mux")(type "KiCad")(uri "/home/matthew/Documents/projects/sd-card-mux/sd-card-mux/sd-card-mux.kicad_sym")(options "")(descr ""))
+)
