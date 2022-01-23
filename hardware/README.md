@@ -22,7 +22,7 @@ switch control line and mux complementary out.
 A Flex-Flex Cable (FFC) header (```J3```) is provided to allow connections
 to the DUT via a flex cable. The other end of the cable is connected to a
 micro-sd breakout board, which is provided in this repo 
-[here](harware/microsd-breakout).
+[here](microsd-breakout).
 
 # Known Issues
 - Silkscreen labels on ```S1``` and ```SW2``` are reversed.
