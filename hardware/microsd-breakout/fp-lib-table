@@ -1,4 +1,4 @@
 (fp_lib_table
-  (lib (name "sd-card-mux")(type "KiCad")(uri "/home/matthew/Documents/projects/sd-card-mux/sd-card-mux/sd-card-mux.pretty")(options "")(descr ""))
+  (lib (name "sd-card-mux")(type "KiCad")(uri "${KIPRJMOD}/../main/sd-card-mux.pretty")(options "")(descr ""))
   (lib (name "kikit")(type "KiCad")(uri "/home/matthew/.local/lib/python3.10/site-packages/kikit/resources/kikit.pretty")(options "")(descr ""))
 )

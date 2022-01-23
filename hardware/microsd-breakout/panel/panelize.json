@@ -1,0 +1,30 @@
+{
+	"layout": {
+		"type": "grid",
+		"rows": 2,
+		"cols": 5,
+		"alternation": "none",
+		"space": "8mm",
+		"vbackbone": "0mm",
+		"hbackbone": "0mm"
+	},
+	"source": {
+		"type": "auto",
+		"tolerance": "20mm"
+	},
+	"tabs": {
+		"type": "annotation"
+	},
+	"cuts": {
+		"type": "vcuts",
+		"clearance": "1.5mm"
+	},
+	"framing": {
+		"type": "tightframe",
+		"width": "5mm",
+		"space": "3mm"
+	},
+	"post": {
+		"copperfill": "true"
+	}
+}
