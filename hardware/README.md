@@ -1,5 +1,5 @@
 # Development Features
-Since this was the first hardware spin of this board, some
+Since this was the first hardware spin of the board, some
 development features were included.
 
 ## Software Switching
@@ -15,13 +15,16 @@ the complementary switching singal.
 - Remove ```R12``` and ```R23```
 - Install ```R11``` and ```R22```
 
+During my testing, I have not seen any issues using the single mux
+switch control line and mux complementary out.
+
 ## DUT Connection via FFC
 A Flex-Flex Cable (FFC) header (```J3```) is provided to allow connections
 to the DUT via a flex cable. The other end of the cable is connected to a
 micro-sd breakout board, which is provided in this repo 
-[here](/microsd-breakout).
+[here](harware/microsd-breakout).
 
 # Known Issues
-- Silkscreen labels on ```S1``` and ``SW2``` are reversed.
+- Silkscreen labels on ```S1``` and ```SW2``` are reversed.
 - On-board micro-sd card in ```J4``` protrudes over the board edge
 and may interfer with the DUT.
