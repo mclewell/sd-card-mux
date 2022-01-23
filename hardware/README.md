@@ -28,3 +28,6 @@ micro-sd breakout board, which is provided in this repo
 - Silkscreen labels on ```S1``` and ```SW2``` are reversed.
 - On-board micro-sd card in ```J4``` protrudes over the board edge
 and may interfer with the DUT.
+- The USB ESD protection (```D1```) caused the USB hub to fail to enumerate
+at high-speed modes, full-speed works correctly. Removing ```D1``` solves
+this issue.
