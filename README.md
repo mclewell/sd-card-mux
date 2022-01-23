@@ -1,4 +1,4 @@
-# sd-card-mux
+# SD-Card-Mux
 A tool to automate testing SD-Card images on embedded devices.
 
 ![SD-Card-Mux Phot](doc/images/sd-card-mux_photo.jpg)
@@ -36,14 +36,19 @@ using the switch on the top of the board.
 Prerequisite: ```libgpiod```
 
 Ubuntu:
-```sudo apt install libgpiod libgpio-dev```
+```
+sudo apt install libgpiod libgpio-dev
+```
 
-Arch:
-Install from the AUR: ```https://aur.archlinux.org/packages/libgpiod/```
+Arch: Install from the AUR: 
+```
+https://aur.archlinux.org/packages/libgpiod/
+```
 
-1. Ensure SW2 (bottom left corner) is set to 'SW'. 
+1. Set SW2 (bottom left corner) is set to 'HW'. (**Note:** Silkscreen labels
+on the board are backwards)
 2. Insert a micro-sd card into J4.
-3. Insert the mux board into the micro-sd card slot of the development board
+3. Insert the mux board into the micro-sd card slot of the development board.
 4. Connect a micro-USB cable between the mux board and development PC.
 5. On power-up the mux board will route the SD card to the DUT, as denoted by the
 illuminated LED by the micro-sd protrusion.
@@ -55,10 +60,31 @@ illuminated LED by the micro-sd protrusion.
 	gpiochip0 [INT34BB:00] (312 lines)
 	gpiochip1 [cp210x] (4 lines)
 	```
-	
 	6b. The mux control line is on ```GPIO.0```. To switch,
 	```
 	$ sudo gpioset gpiochip1 0=0
 	```
 	The LED next to the micro-sd card slot will blink when the SD-Card is
 	accessed.
+
+#### UART and Additional GPIO
+The SD-Card-Mux can also contains a USB-UART serial bridge. Conect the ```TXD```
+and ```RXD``` signals in J2 to thee UART on the DUT. The bridge should appear
+on the development computer as ```/dev/ttyUSB0```.
+
+There are also two additional GPIO from the CP210N broken out into the J2 
+header (```GPIO.2```, ```GPIO.3```). These signals can be controlled in the same
+fashion as the mux switch function using ```gpioset```. One of these lines can
+be connected to the reset of the DUT. Ideally, the DUT should be held in reset
+while the SD-card is switch. Once switched over, the reset line can be released
+allowing the DUT to boot the new image. 
+
+### Manual Control
+1. Set SW2 to the 'SW' position. (**Note:** Silkscreen labels on the board are
+backwards)
+2. Use SW1 to switch the micro-SD card between the DUT and development 
+computer. (**Note:** the silkscreen labels are also backwards here).
+
+# Acknowledgements
+- https://wiki.tizen.org/SDWire
+- https://github.com/kopasiak/sd-mux
